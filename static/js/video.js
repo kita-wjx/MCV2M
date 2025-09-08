@@ -34,6 +34,5 @@ document.querySelectorAll(".toggle-bar").forEach(bar => {
   });
 });
 
-// 初始化不同类型
 createVideoSection("gallery1", 40, "static/videos/V2M/", "videos-only");
-createVideoSection("gallery2", 10, "static/videos/MCV2M/", "image-video");
+createVideoSection("gallery2", 2, "static/videos/MCV2M/", "image-video");
