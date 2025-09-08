@@ -1,4 +1,4 @@
-function createVideoSection(galleryId, count, prefix="", layout="videos-only") {
+function createVideoSection(galleryId, count, prefix="", layout="videos-only", texts=[]) {
   const gallery = document.querySelector(`#${galleryId} .gallery`);
 
   for (let i = 1; i <= count; i++) {
@@ -13,7 +13,7 @@ function createVideoSection(galleryId, count, prefix="", layout="videos-only") {
 
       const title = document.createElement("div");
       title.className = "image-title";
-      title.textContent = "Input Condition: Emotion";
+      title.textContent = `Input Condition: ${texts[i-1]}`;
 
       const img = document.createElement("img");
       img.src = `${prefix}${i}.png`;
@@ -45,4 +45,4 @@ document.querySelectorAll(".toggle-bar").forEach(bar => {
 });
 
 createVideoSection("gallery1", 40, "static/videos/V2M/", "videos-only");
-createVideoSection("gallery2", 2, "static/videos/MCV2M/", "image-video");
+createVideoSection("gallery2", 2, "static/videos/MCV2M/", "image-video", ["Emotion"", "Intensity"]);
