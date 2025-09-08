@@ -9,7 +9,7 @@ function createVideoSection(galleryId, count, prefix="", layout="videos-only") {
       gallery.appendChild(video);
     } else if (layout === "image-video") {
       const img = document.createElement("img");
-      img.src = `${prefix}${i}.jpg`;
+      img.src = `${prefix}${i}.png`;
 
       const video = document.createElement("video");
       video.src = `${prefix}${i}.mp4`;
