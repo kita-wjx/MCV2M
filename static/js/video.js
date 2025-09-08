@@ -45,4 +45,4 @@ document.querySelectorAll(".toggle-bar").forEach(bar => {
 });
 
 createVideoSection("gallery1", 40, "static/videos/V2M/", "videos-only");
-createVideoSection("gallery2", 2, "static/videos/MCV2M/", "image-video", ["Emotion", "Intensity"]);
+createVideoSection("gallery2", 4, "static/videos/MCV2M/", "image-video", ["Emotion", "Emotion", "Intensity", "Intensity"]);
