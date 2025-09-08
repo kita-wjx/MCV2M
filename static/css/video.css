@@ -1,5 +1,5 @@
 .toggle-bar {
-      background-color: #FF9800;
+      background-color: #f0f0f0;
       color: white;
       padding: 12px;
       cursor: pointer;
@@ -8,7 +8,7 @@
       border-radius: 6px;
       margin: 20px auto;   /* center horizontally */
       user-select: none;
-      width: 90%;          /* take up 80% of page width */
+      width: 90%;          /* take up 90% of page width */
       max-width: 1000px;   /* optional: prevent being too wide on large screens */
       text-align: center;
     }
