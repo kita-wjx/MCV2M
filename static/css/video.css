@@ -1,45 +1,56 @@
 .toggle-bar {
-      background-color: #f0f0f0;
-      color: white;
-      padding: 12px;
-      cursor: pointer;
-      font-size: 18px;
-      font-weight: bold;
-      border-radius: 6px;
-      margin: 20px auto;   /* center horizontally */
-      user-select: none;
-      width: 90%;          /* take up 90% of page width */
-      max-width: 1000px;   /* optional: prevent being too wide on large screens */
-      text-align: center;
-    }
-    .gallery-wrapper {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.6s ease;
-      width: 90%;
-      margin: 0 auto; /* center the gallery too */
-    }
-    .gallery-wrapper.open {
-      max-height: 5000px; /* Large enough for all videos */
-    }
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 15px;
-      padding: 20px;
-    }
-    .video-item {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-    .video-item p {
-      margin: 5px 0;
-      font-size: 14px;
-      font-weight: bold;
-    }
-    video {
-      width: 100%;
-      height: auto;
-      border-radius: 8px;
-    }
+  background-color: #F0F0F0;
+  padding: 12px;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 6px;
+  margin: 20px auto;
+  user-select: none;
+  width: 90%;
+  max-width: 1000px;
+  text-align: center;
+  line-height: 1.4;
+}
+
+.toggle-bar {
+  display: block;
+}
+
+.gallery-wrapper {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.6s ease;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.gallery-wrapper.open {
+  max-height: 5000px;
+}
+
+.gallery {
+  display: grid;
+  gap: 15px;
+  padding: 20px;
+}
+
+[data-layout="videos-only"] .gallery {
+  grid-template-columns: repeat(8, 1fr);
+}
+
+[data-layout="videos-only"] video {
+  width: 100%;
+  border-radius: 8px;
+}
+
+[data-layout="image-video"] .gallery {
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+}
+
+[data-layout="image-video"] img,
+[data-layout="image-video"] video {
+  width: 100%;
+  border-radius: 8px;
+}
