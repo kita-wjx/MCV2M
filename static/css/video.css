@@ -46,11 +46,30 @@
 
 [data-layout="image-video"] .gallery {
   grid-template-columns: 1fr 1fr;
-  align-items: center;
+  align-items: start;
+  gap: 20px;
 }
 
-[data-layout="image-video"] img,
-[data-layout="image-video"] video {
+.image-wrapper {
+  position: relative;
+  display: inline-block;
+  width: 60%;
+  margin: 0 auto;
+}
+
+.image-wrapper img {
   width: 100%;
   border-radius: 8px;
+  display: block;
+}
+
+.image-wrapper .image-title {
+  position: absolute;
+  top: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 14px;
+  font-weight: bold;
+  color: #333;
+  white-space: nowrap;
 }
