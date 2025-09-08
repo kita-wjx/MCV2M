@@ -37,6 +37,49 @@
   href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="static/css/index.css">
 
+  <style>
+    .toggle-bar {
+      background-color: #007acc;
+      color: white;
+      padding: 12px;
+      cursor: pointer;
+      font-size: 18px;
+      font-weight: bold;
+      border-radius: 6px;
+      margin: 20px;
+      user-select: none;
+    }
+    .gallery-wrapper {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.6s ease;
+    }
+    .gallery-wrapper.open {
+      max-height: 5000px; /* 足够大以容纳所有视频 */
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(8, 1fr);
+      gap: 15px;
+      padding: 20px;
+    }
+    .video-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .video-item p {
+      margin: 5px 0;
+      font-size: 14px;
+      font-weight: bold;
+    }
+    video {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+  </style>
+
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
   <script defer src="static/js/fontawesome.all.min.js"></script>
@@ -169,7 +212,41 @@
 <!-- End image carousel -->
 
 <!-- Video carousel -->
+  <div class="toggle-bar" id="toggleBar">▶ Show Videos</div>
+  <div class="gallery-wrapper" id="galleryWrapper">
+    <div class="gallery" id="gallery"></div>
+  </div>
+  <script>
+    const gallery = document.getElementById("gallery");
+    const galleryWrapper = document.getElementById("galleryWrapper");
+    const toggleBar = document.getElementById("toggleBar");
+    
+    for (let i = 1; i <= 40; i++) {
+      const container = document.createElement("div");
+      container.className = "video-item";
 
+      const title = document.createElement("p");
+      title.textContent = `Video ${i}`;
+
+      const video = document.createElement("video");
+      video.src = `static/videos/V2M/${i}.mp4`;
+      video.controls = true;
+
+      container.appendChild(title);
+      container.appendChild(video);
+      gallery.appendChild(container);
+    }
+
+    toggleBar.addEventListener("click", () => {
+      if (galleryWrapper.classList.contains("open")) {
+        galleryWrapper.classList.remove("open");
+        toggleBar.textContent = "▶ Show Videos";
+      } else {
+        galleryWrapper.classList.add("open");
+        toggleBar.textContent = "▼ Hide Videos";
+      }
+    });
+  </script>
 <!-- End video carousel -->
 
 <!--BibTex citation -->
