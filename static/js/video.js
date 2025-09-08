@@ -8,14 +8,24 @@ function createVideoSection(galleryId, count, prefix="", layout="videos-only") {
       video.controls = true;
       gallery.appendChild(video);
     } else if (layout === "image-video") {
+      const wrapper = document.createElement("div");
+      wrapper.className = "image-wrapper";
+
+      const title = document.createElement("div");
+      title.className = "image-title";
+      title.textContent = "Input Condition: Emotion";
+
       const img = document.createElement("img");
       img.src = `${prefix}${i}.png`;
+
+      wrapper.appendChild(title);
+      wrapper.appendChild(img);
 
       const video = document.createElement("video");
       video.src = `${prefix}${i}.mp4`;
       video.controls = true;
 
-      gallery.appendChild(img);
+      gallery.appendChild(wrapper);
       gallery.appendChild(video);
     }
   }
