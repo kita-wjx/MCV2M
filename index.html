@@ -37,53 +37,7 @@
   href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="static/css/index.css">
 
-  <style>
-    .toggle-bar {
-      background-color: #666666;
-      color: white;
-      padding: 12px;
-      cursor: pointer;
-      font-size: 18px;
-      font-weight: bold;
-      border-radius: 6px;
-      margin: 20px auto;   /* center horizontally */
-      user-select: none;
-      width: 80%;          /* take up 80% of page width */
-      max-width: 1000px;   /* optional: prevent being too wide on large screens */
-      text-align: center;
-    }
-    .gallery-wrapper {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.6s ease;
-      width: 90%;
-      margin: 0 auto; /* center the gallery too */
-    }
-    .gallery-wrapper.open {
-      max-height: 5000px; /* Large enough for all videos */
-    }
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 15px;
-      padding: 20px;
-    }
-    .video-item {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-    .video-item p {
-      margin: 5px 0;
-      font-size: 14px;
-      font-weight: bold;
-    }
-    video {
-      width: 100%;
-      height: auto;
-      border-radius: 8px;
-    }
-  </style>
+  <link rel="stylesheet" href="static/css/video.css">
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
